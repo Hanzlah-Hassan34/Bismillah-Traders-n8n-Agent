@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: n8n-whatsapp
+    env: docker
+    plan: free
+    autoDeploy: false
+    repo: https://github.com/Hanzlah-Hassan34/Bismillah-Traders-n8n-Agent
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: strongpassword
+      - key: N8N_HOST
+        value: n8n-whatsapp.onrender.com
+      - key: N8N_PORT
+        value: 5678
+      - key: WEBHOOK_URL
+        value: https://n8n-whatsapp.onrender.com/
+      - key: GENERIC_TIMEZONE
+        value: Asia/Karachi
+      - key: NODE_ENV
+        value: production
